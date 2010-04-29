@@ -1,2 +1,2 @@
-* "Home"[/home]
-* "Specification"[/specification]
+* "Home"[/home/]
+* "Specification"[/specification/]
