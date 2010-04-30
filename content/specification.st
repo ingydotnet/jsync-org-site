@@ -1,5 +1,7 @@
 ^ JSYNC Specification
 
+JSYNC is a serialization language that is built on 
+
 There are three things to remember about JSYNC:
 
 # All JSYNC encodings are also valid "JSON"<http://www.json.org> encodings (although they do not necessarily mean the same thing).  This means that any JSON parser implementation can be used to parse any JSYNC stream.
