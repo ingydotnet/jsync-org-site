@@ -1,12 +1,12 @@
 ^^ JavaScript and YAML Notation Coding
 
-JSYNC is a simple data serialization language. It takes all the simplicity of "JSON"<http://www.json.org/> and combines it with the completeness of "YAML"<http://www.yaml.org>. This allows for _full data graph serialization._ The result is the ability serialize data in a language that is simple and familiar, while reusing the existing and ubiquitous set of JSON implementations.
+JSYNC is a simple data serialization language. It takes the simplicity of "JSON"<http://www.json.org/> and combines it with the completeness of "YAML"<http://www.yaml.org>. This allows for _full data graph serialization._ JSYNC has the ability serialize data in a language that is simple and familiar, while reusing the existing and ubiquitous set of JSON implementations.
 
 ^^^ Why JSON is Great!
 
 # JSON is a very simple subset of JavaScript data syntax.
-# There are existing JSON implementations in nearly every programming language in use today.
 # JSON is very easy to implement.
+# There are existing JSON implementations in nearly every programming language in use today.
 
 JSON was a huge win for programming. It defined a very simple language and within a few months had solid implementations in several key languages. Today it is the ubiquitous encoding for transferring simple data.
 
