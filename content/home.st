@@ -1,6 +1,6 @@
 ^^ JavaScript and YAML Notation Coding
 
-JSYNC is a simple data serialization language. It takes the simplicity of "JSON"<http://www.json.org/> and combines it with the completeness of "YAML"<http://www.yaml.org>. This allows for _full data graph serialization._ JSYNC has the ability serialize data in a language that is simple and familiar, while reusing the existing and ubiquitous set of JSON implementations.
+JSYNC is a simple data serialization language. It takes the simplicity of "JSON"<http://www.json.org/> and combines it with the completeness of "YAML"<http://www.yaml.org>. This allows for _full data graph serialization._ JSYNC has the ability to serialize data in a language that is simple and familiar, while reusing the existing and ubiquitous set of JSON implementations.
 
 ^^^ Why JSON is Great!
 
@@ -23,7 +23,7 @@ JSON falls short because it can only serialize a strict (albeit highly useful) s
 
 Nearly a decade of diligence has been put into the YAML specification. It gets node typing, addressing and referencing right. It has stood the test of time. (YAML is also well known for catering to human readability, but that aspect of it is not leveraged by JSYNC.)
 
-YAML falls short because it is very complex, and thus, very difficult to implement. (YAML was started in 2001, JSON in 2005, yet JSON dwarves YAML in stable implementations.)
+YAML falls short because it is very complex, and thus, very difficult to implement. JSON dwarves YAML in stable implementations.
 
 ^^^ Why JSYNC will be Great!!!
 
@@ -64,7 +64,7 @@ Here is a simple example of a JSYNC encoding:
     {
         "!": "record",
         "game": "*001",
-        "notes": ".... add note here ...",
+        "notes": "... add note here ...",
         "number": 59,
         "player": "*002",
         "record": "Most points, one half"
