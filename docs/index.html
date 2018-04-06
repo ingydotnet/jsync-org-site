@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <title>JavaScript and YAML Notation Coding</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="/project-site.css" type="text/css">
+  <link rel="stylesheet" href="/custom.css" type="text/css">
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/sidebar.js"></script>
+</head>
+
+<body>
+<div class="page">
+<div class="header">
+
+  <h1 id="site-name"><a href="/">JSYNC</a></h1>
+
+</div>
+
+<div class="bottom">
+<div class="sidebar">
+<ul>
+<li><a href="/home/">Home</a></li>
+<li><a href="/spec/">Specification</a></li>
+</ul>
+
+</div>
+
+<div class="content">
+
+
+<h2>JavaScript and YAML Notation Coding</h2>
+<p>JSYNC is a simple data serialization language. It takes the simplicity of <a href="http://www.json.org/">JSON</a> and combines it with the completeness of <a href="http://www.yaml.org">YAML</a>. This allows for <em>full data graph serialization.</em> JSYNC has the ability to serialize data in a language that is simple and familiar, while reusing the existing and ubiquitous set of JSON implementations.</p>
+<h3>Why JSON is Great!</h3>
+<ol>
+<li>JSON is a very simple subset of JavaScript data syntax.</li>
+<li>JSON is very easy to implement.</li>
+<li>There are existing JSON implementations in nearly every programming language in use today.</li>
+</ol>
+<p>JSON was a huge win for programming. It defined a very simple language and within a few months had solid implementations in several key languages. Today it is the ubiquitous encoding for transferring simple data.</p>
+<p>JSON falls short because it can only serialize a strict (albeit highly useful) subset of data graphs. Namely: <em>string-keyed-mappings, sequences, strings, numbers, boolean</em> and <em>null</em> values. It cannot handle types, references and complex keys.</p>
+<h3>Why YAML is Great!</h3>
+<ol>
+<li>YAML uses the same data model as JSON.</li>
+<li>YAML adds three things that are not present in JSON:<ul>
+<li>Node Types</li>
+<li>Node Addresses and References</li>
+<li>Complex Mapping Keys</li>
+</ul>
+</li>
+<li>With these additions, YAML can serialize any data graph.</li>
+</ol>
+<p>Nearly a decade of diligence has been put into the YAML specification. It gets node typing, addressing and referencing right. It has stood the test of time. (YAML is also well known for catering to human readability, but that aspect of it is not leveraged by JSYNC.)</p>
+<p>YAML falls short because it is very complex, and thus, very difficult to implement. JSON dwarves YAML in stable implementations.</p>
+<h3>Why JSYNC will be Great!!!</h3>
+<ol>
+<li>JSYNC <em><strong>is</strong></em> JSON.<ul>
+<li>It starts with an enormous, stable code base for parsing and emitting.</li>
+</ul>
+</li>
+<li>JSYNC <em><strong>adds</strong></em> YAML (<em>the good parts</em>).<ul>
+<li>It takes well defined typing and reference syntax, verbatim from the YAML spec.</li>
+</ul>
+</li>
+<li>JSYNC <em><strong>becomes</strong></em> a minimal, yet complete, data serialization language.<ul>
+<li>Q.E.D.</li>
+</ul>
+</li>
+</ol>
+<p>By taking the best aspects of both JSON and YAML, JSYNC is in a clear win/win/win situation for completeness, robustness, and usability.</p>
+<hr />
+<p>Here is a simple example of a JSYNC encoding:</p>
+<pre>[
+    "!records",
+    {
+        "!": "record",
+        "game": {
+            "!": "game",
+            "&": "001",
+            "date": "!!date March 2, 1962",
+            "versus": "New York"
+        },
+        "notes": ".!!! Awesome !!!",
+        "number": 100,
+        "player": {
+            "!": "player",
+            "&": "002",
+            "name": "Wilt Chamberlain",
+            "team": "Philadelphia"
+        },
+        "record": "Most points single game"
+    },
+    {
+        "!": "record",
+        "game": "*001",
+        "notes": "... add note here ...",
+        "number": 59,
+        "player": "*002",
+        "record": "Most points, one half"
+    }
+]
+</pre><p>The JSYNC encoded data structure above, is equivalent to the YAML encoded data structure below.</p>
+<pre>--- !records
+- !record
+  game: !game &001
+    date: !!date March 2, 1962
+    versus: New York
+  notes: '!!! Awesome !!!'
+  number: 100
+  player: !player &002
+    name: Wilt Chamberlain
+    team: Philadelphia
+  record: Most points single game
+- !record
+  game: *001
+  notes: ... add note here ...
+  number: 59
+  player: *002
+  record: Most points, one half
+</pre><p>There is no way to encode this data structure in pure/standard JSON. You can, of course, build a scheme on top of JSON to represent everything. In fact, that's exactly what JSYNC does, and in the simplest and most standard way possible.</p>
+<hr />
+<p>Copyright © 2010 Ingy döt Net</p>
+<p>This document may be freely copied provided it is not modified.</p>
+
+
+</div>
+</div>
+</div>
+</body>
+
+</html>
+
